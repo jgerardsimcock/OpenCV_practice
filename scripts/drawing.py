@@ -40,10 +40,13 @@ canvas = np.zeros((400,400,3), dtype="uint8")
 #Now let's randomly draw circles of various colors
 
 for i in xrange(0, 25):
-  radius = np.random.randint(5, high=200)
+  #this makes a radius of a random value
+  radius = np.random.randint(5, high=150)
+  #this makes a RGB color from random value
   color = np.random.randint(0, high = 255, size = (3,)).tolist()
+  #this creates a tuple of size two that we use as our center
   pt = np.random.randint(0, high=300, size=(2,))
-
+  #we then create a circle with those values
   cv2.circle(canvas, tuple(pt), radius, color, -1)
 
 cv2.imshow("Canvas", canvas)
